@@ -34,6 +34,9 @@ public class App
     if(file == null) {
       file = new App();
     }
+    else {
+    file = new App(name, path);
+    }
     return file;
     }
     
