@@ -40,6 +40,20 @@ public class App
     return file;
     }
     
+    public List aList(String name, String path) {
+     List list = new ArrayList();
+     App f = new App(name, path);
+      if(file.getFile() != null) {
+        if (list.contains(f)) {
+          Collections.reverse(list);
+          }
+        else {
+          list.add(f.appToString());
+          }
+        }          
+    return list;    
+    }
+    
     public String appToString() {
     return name +" "+ path;
     }
