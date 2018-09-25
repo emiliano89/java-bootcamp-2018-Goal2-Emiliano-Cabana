@@ -1,13 +1,5 @@
 package bootcamp;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.ListIterator;
-
 public class App 
 {    
     public String getName() {
@@ -26,10 +18,9 @@ public class App
         this.path = path;
     }
 
-    private String name;
-    private String path;
+    private String name = null;
+    private String path = null;
     private App file = null;
-    public List alist = null;
     
     public App() {
     }
@@ -39,12 +30,9 @@ public class App
         this.path = path;
     }
 
-    public App getFile(String name, String path) {
+    public App getFile() {
     if(file == null) {
       file = new App();
-    }
-    else {
-      file = new App(name,path);
     }
     return file;
     }
@@ -53,21 +41,7 @@ public class App
     return name +" "+ path;
     }
     
-    public List RecentFiles(){
-     String list = "";
-    for(int i = 0; i<15 ; i++){
-    if (file.getFile(name,path).toString() != null) {
-    alist.add(file.appToString());
-    }
-    }
-    return alist; 
-    }
-
     public static void main( String[] args ) {
     
-    App app = new App();
-    List recent = app.RecentFiles();
-    String name = app.name;
-    String path = app.path;
    }
 }

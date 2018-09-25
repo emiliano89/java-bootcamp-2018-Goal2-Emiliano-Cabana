@@ -1,18 +1,22 @@
 package bootcamp;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import java.util.List;
+import static org.hamcrest.CoreMatchers.is;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class AppTest 
-    extends TestCase
+    //extends TestCase
 {
     @Test
     public void WhenRunForTheFirstTimeThenTheListIsEmpty(){
     App app = new App();
-    List recent = app.RecentFiles();
-    //assertEquals(recent.size(), 0);
-    assertTrue(recent.isEmpty());
+    
+    assertEquals(app.getFile().getName(), null);
      }
     
 }
