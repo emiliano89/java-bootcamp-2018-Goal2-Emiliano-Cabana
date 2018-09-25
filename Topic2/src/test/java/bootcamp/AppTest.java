@@ -10,7 +10,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest 
-    //extends TestCase
 {
     @Test
     public void WhenRunForTheFirstTimeThenTheListIsEmpty(){
