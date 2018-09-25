@@ -15,10 +15,16 @@ public class AppTest
     @Test
     public void WhenRunForTheFirstTimeThenTheListIsEmpty(){
     App app = new App();
-    
     assertEquals(app.getFile().getName(), null);
-     }
+    }
     
-    
+    @Test
+    public void WhenIsOpenedAddToRecentFileList() {
+    App app = new App();
+    App file = app.getFile();
+    file.setName("txt");
+    file.setPath("C:/");
+    assertEquals(app.getName()+" "+app.getPath(), app.getFile().appToString());
+    }
 }
 
