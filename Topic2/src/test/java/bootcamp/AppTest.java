@@ -24,7 +24,8 @@ public class AppTest
     App file = app.getFile();
     file.setName("txt");
     file.setPath("C:/");
-    assertEquals(app.getName()+" "+app.getPath(), app.getFile().appToString());
+    List list = app.aList(file.getName(),file.getPath());
+    assertEquals("["+file.getName()+" "+file.getPath()+"]" , list.toString());
     }
 }
 
