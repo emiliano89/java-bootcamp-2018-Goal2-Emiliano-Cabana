@@ -1,7 +1,6 @@
 package bootcamp;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class App 
@@ -13,7 +12,7 @@ public class App
     public void setName(String name) {
         this.name = name;
     }
-
+  
     public String getPath() {
         return path;
     }
@@ -25,6 +24,7 @@ public class App
     private String name = null;
     private String path = null;
     private App file = null;
+    private List<String> list = new ArrayList();
     
     public App() {
     }
@@ -34,35 +34,56 @@ public class App
         this.path = path;
     }
 
-    public App getFile() {
-    if(file == null) {
-      file = new App();
-    }
-    else {
-    file = new App(name, path);
-    }
+    public App openFile(String n, String p) {
+      App a = new App(n,p);
+      String obj = a.appToString();
+//    if(a != null) {
+      if(list.contains(obj) == false) {
+      file = a;
+         if(list.size()<15) {
+          list.add(n+" "+p);
+         }
+         else {
+         list.set(0, n+" "+p);
+         }
+      }
+      else {
+      list.set(0, n+" "+p);
+      }
+//     }        
     return file;
     }
-    
-    public List aList(String name, String path) {
-     List list = new ArrayList();
-     App f = new App(name, path);
-      if(file.getFile() != null) {
-        if (list.contains(f)) {
-          Collections.reverse(list);
-          }
-        else {
-          list.add(f.appToString());
-          }
-        }          
-    return list;    
+        
+    public String getItemList(int a) {
+      String item = list.get(a);
+      return item;
     }
     
+    public List getList() {
+       return list;
+    }
+    
+    public void cleanList() {
+    list.clear();
+    }
+     
     public String appToString() {
     return name +" "+ path;
     }
     
-    public static void main( String[] args ) {
-    
-   }
+    public boolean isDuplicated(String parameter) {
+     boolean duplicate= false;
+     int contador = 0;
+     for(int i = 0; i< list.size(); i++) {
+        if(parameter.equals(list.get(i)))
+        {
+          contador ++;
+         if(contador > 1) {
+         duplicate = true;
+        }
+        }
+
+     }
+     return duplicate;
+    }
 }
