@@ -10,8 +10,7 @@ public class AppTest {
     public void WhenRunForTheFirstTimeThenTheListIsEmpty(){
     App app = new App();
     List list = app.getList();
-    app.cleanList();
-    assertEquals("[]", list.toString());
+    assertTrue(list.isEmpty());
     }
  
     @Test
