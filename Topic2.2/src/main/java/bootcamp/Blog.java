@@ -10,8 +10,6 @@ public class Blog{
     private int t = 0;
     boolean isFull = false;
     
-    public Blog() {}
-    
     public String postEntry(String entry) {
        int i = list.size();
       list.add(entry);
