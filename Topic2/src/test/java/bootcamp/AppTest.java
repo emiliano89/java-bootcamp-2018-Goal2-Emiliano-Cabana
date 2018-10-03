@@ -38,6 +38,7 @@ public class AppTest {
     app.openFile("txt","C:/");
     app.openFile("txt","C:/");
     assertEquals("txt C:/", app.getItemList(0));
+    assertEquals("jpg D:/", app.getItemList(1));
     }
     
     @Test
@@ -61,6 +62,20 @@ public class AppTest {
     app.openFile("15","D:/");
     app.openFile("16","C:/");
     assertEquals("16 C:/", app.getItemList(0));
+    assertEquals("2 C:/", app.getItemList(1));
+    assertEquals("3 C:/", app.getItemList(2));
+    assertEquals("4 D:/", app.getItemList(3));
+    assertEquals("5 C:/", app.getItemList(4));
+    assertEquals("6 E:/", app.getItemList(5));
+    assertEquals("7 C:/", app.getItemList(6));
+    assertEquals("8 F:/", app.getItemList(7));
+    assertEquals("9 C:/", app.getItemList(8));
+    assertEquals("10 D:/", app.getItemList(9));
+    assertEquals("11 C:/", app.getItemList(10));
+    assertEquals("12 C:/", app.getItemList(11));
+    assertEquals("13 E:/", app.getItemList(12));
+    assertEquals("14 C:/", app.getItemList(13));
+    assertEquals("15 D:/", app.getItemList(14));
     }
 }
 
