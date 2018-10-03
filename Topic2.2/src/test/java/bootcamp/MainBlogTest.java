@@ -25,8 +25,9 @@ public class MainBlogTest {
    @Test
    public void testDeleteEntry() { 
       int i = 0;
-      when(mockblog.deleteEntry(i)).thenReturn(null);
-      assertEquals(null, mainblog.deleteEntry(i));
+      mainblog.postEntry("hello");
+      when(Mockblog.deleteEntry(i)).thenReturn(true);
+      assertTrue(mainblog.deleteEntry(i));
    }
       
    @Test
