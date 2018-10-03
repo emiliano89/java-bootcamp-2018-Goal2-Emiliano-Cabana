@@ -14,7 +14,7 @@ public class MainBlogTest {
     String entry = null;
       
    Blog mockblog = mock(Blog.class);
-   MainBlog mainblog = new MainBlog(Mockblog);
+   MainBlog mainblog = new MainBlog(mockblog);
    
    @Test
    public void testPostEntry(){
@@ -26,14 +26,14 @@ public class MainBlogTest {
    public void testDeleteEntry() { 
       int i = 0;
       mainblog.postEntry("hello");
-      when(Mockblog.deleteEntry(i)).thenReturn(true);
+      when(mockblog.deleteEntry(i)).thenReturn(true);
       assertTrue(mainblog.deleteEntry(i));
    }
       
    @Test
    public void testMostRecentEntries() {
     List mockList = new ArrayList();
-    when(Mockblog.recentEntries(entry)).thenCallRealMethod();
+    when(mockblog.recentEntries(entry)).thenCallRealMethod();
     mainblog.recentEntries(entry = "a");
     mainblog.recentEntries(entry = "b");
     mainblog.recentEntries(entry = "c");
@@ -46,7 +46,7 @@ public class MainBlogTest {
     mainblog.recentEntries(entry = "j");
     mainblog.recentEntries(entry = "k");
     mockList.add(mainblog.recentEntries(entry = "l"));
-    when(Mockblog.recentEntryList()).thenReturn(mockList);
+    when(mockblog.recentEntryList()).thenReturn(mockList);
     assertEquals("[k, l, c, d, e, f, g, h, i, j]", mainblog.recentEntryList().toString());
    }
 }

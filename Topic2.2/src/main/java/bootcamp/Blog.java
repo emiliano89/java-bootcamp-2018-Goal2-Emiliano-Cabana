@@ -17,11 +17,14 @@ public class Blog{
       return output;
     }
     
-    public String deleteEntry(int entry) {
-      String output= null;
-      if(entry < list.size()) {
+    public boolean deleteEntry(int entry) {
+      boolean output= false;
+      if(entry < list.size() && entry >= 0 ) {
        list.remove(entry);
-       output= list.get(entry);
+       output = true;
+      }
+      else {
+      output = false;
       }
        return output;
     }
