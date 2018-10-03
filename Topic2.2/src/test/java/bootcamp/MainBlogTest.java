@@ -32,20 +32,20 @@ public class MainBlogTest {
    @Test
    public void testMostRecentEntries() {
     List mockList = new ArrayList();
-    when(mockblog.recentEntries(entry)).thenCallRealMethod();
-    mockList.add(mainblog.recentEntries(entry = "a"));
-    mockList.add(mainblog.recentEntries(entry = "b"));
-    mockList.add(mainblog.recentEntries(entry = "c"));
-    mockList.add(mainblog.recentEntries(entry = "d"));
-    mockList.add(mainblog.recentEntries(entry = "e"));
-    mockList.add(mainblog.recentEntries(entry = "f"));
-    mockList.add(mainblog.recentEntries(entry = "g"));
-    mockList.add(mainblog.recentEntries(entry = "h"));
-    mockList.add(mainblog.recentEntries(entry = "i"));
-    mockList.add(mainblog.recentEntries(entry = "j"));
-    mockList.add(mainblog.recentEntries(entry = "k"));
+    when(Mockblog.recentEntries(entry)).thenCallRealMethod();
+    mainblog.recentEntries(entry = "a");
+    mainblog.recentEntries(entry = "b");
+    mainblog.recentEntries(entry = "c");
+    mainblog.recentEntries(entry = "d");
+    mainblog.recentEntries(entry = "e");
+    mainblog.recentEntries(entry = "f");
+    mainblog.recentEntries(entry = "g");
+    mainblog.recentEntries(entry = "h");
+    mainblog.recentEntries(entry = "i");
+    mainblog.recentEntries(entry = "j");
+    mainblog.recentEntries(entry = "k");
     mockList.add(mainblog.recentEntries(entry = "l"));
-    when(mockblog.recentEntryList()).thenReturn(mockList);
+    when(Mockblog.recentEntryList()).thenReturn(mockList);
     assertEquals("[k, l, c, d, e, f, g, h, i, j]", mainblog.recentEntryList().toString());
    }
 }
